@@ -26,24 +26,33 @@ public class EdaUaTests {
 
         System.setProperty("webdriver.gecko.driver","D:\\Selenium\\geckodriver.exe");
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Test //add valid user in Sign In form
+    @Test //add valid user in "Sign In" form
     public void addValidUser() throws InterruptedException {
 
         driver.get("https://eda.ua/");
 
         BasePageElements basePageElements = new BasePageElements(driver);
         LoginRegistrtionForm loginRegistrtionForm = new LoginRegistrtionForm(driver);
+        AddDeliveryAdress addDeliveryAdress = new AddDeliveryAdress(driver);
 
         basePageElements.buttonLogin.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(2000);// I have to change it!!!
         loginRegistrtionForm.fieldEmail.sendKeys("viktorbibik@ukr.net");
         loginRegistrtionForm.fieldPassword.sendKeys("deadmananor_1");
         loginRegistrtionForm.buttonLogin.click();
         loginRegistrtionForm.buttonClose.click();
+
+
+        Thread.sleep(2000);// I have to change it!!!
+        driver.get("https://eda.ua/");
+        addDeliveryAdress.adressSign.click();
+        Thread.sleep(4000);// I have to change it!!!
+        addDeliveryAdress.fieldAdress.sendKeys("sacdvjdhnjlkh3242376ygdvkh2364t23ghfgdhf");
+        addDeliveryAdress.buttonConfirm.click();
 
         File file= new File("browser.data");
 
