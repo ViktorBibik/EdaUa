@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by Victor on 08.11.2016.
  */
-public class AddDeliveryAdress {
-    public AddDeliveryAdress(WebDriver driver) {
+public class AddDeliveryAdress extends BasePageElements {
 
-        PageFactory.initElements(driver, this);
+    public AddDeliveryAdress(WebDriver driver) {
+        super(driver);
     }
 
     //AddDeliveryAdress

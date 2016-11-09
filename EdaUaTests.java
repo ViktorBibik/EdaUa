@@ -25,6 +25,8 @@ public class EdaUaTests {
     public void setUp() {
 
         System.setProperty("webdriver.gecko.driver","D:\\Selenium\\geckodriver.exe");
+        //System.setProperty("webdriver.gecko.driver","D:\\Selenium\\geckodriver-v0.10.0-win64\\geckodriver.exe");
+
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

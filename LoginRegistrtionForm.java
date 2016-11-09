@@ -8,11 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by Victor on 08.11.2016.
  */
-public class LoginRegistrtionForm {
+public class LoginRegistrtionForm extends BasePageElements {
 
     public LoginRegistrtionForm(WebDriver driver) {
-
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     //Login user
@@ -28,4 +27,5 @@ public class LoginRegistrtionForm {
 
     @FindBy(xpath = "//div[@id='login']//button[@class='close']")
     public WebElement buttonClose;
+
 }
